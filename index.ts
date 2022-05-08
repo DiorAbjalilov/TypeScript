@@ -8,14 +8,18 @@ interface User {
   completed: boolean;
 }
 
-axios.get(url).then((res) => {
-  const user = res.data as User;
-  const ID = user.id;
-  const title = user.title;
-  const completed = user.completed;
+const logger = (id: number, title: string, completed: boolean) => {
   console.log(`
-        My id: ${ID}
+        My id: ${id}
         My title: ${title}
         My completed: ${completed}
     `);
+};
+
+axios.get(url).then((res) => {
+  const user = res.data as User;
+  const id = user.id;
+  const title = user.title;
+  const completed = user.completed;
+  logger(id, title, completed);
 });
