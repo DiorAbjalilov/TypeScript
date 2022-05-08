@@ -11,4 +11,11 @@ const logger: (name: number) => void = (name: number) => {
   console.log(name);
 };
 
-let numbe: number;
+const calc = (a: number, b: number) => {
+  a + b;
+};
+// calc(1, 2);
+
+const sayErr = (msg: string): never => {
+  throw new Error(msg);
+};
